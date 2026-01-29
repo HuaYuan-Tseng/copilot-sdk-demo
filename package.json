@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node webpage-analyzer-agent.js https://blog.miniasp.com/post/2025/12/03/How-to-compress-the-ext4vhdx-virtual-disk-of-WSL-2"
   },
   "keywords": [],
-  "author": "Will 保哥 <doggy.huang@gmail.com> (https://blog.miniasp.com/)",
+  "author": "Will 保哥",
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "@github/copilot-sdk": "^0.1.19"
+    "@github/copilot-sdk": "^0.1.19",
+    "axios": "^1.13.4",
+    "cheerio": "^1.2.0"
   }
 }
