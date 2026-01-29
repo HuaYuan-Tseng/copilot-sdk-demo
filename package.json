@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "tsx tell-me-a-joke.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,5 +13,8 @@
   "type": "module",
   "dependencies": {
     "@github/copilot-sdk": "^0.1.19"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
   }
 }
