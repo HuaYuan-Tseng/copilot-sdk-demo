@@ -1,27 +1,30 @@
 import { CopilotClient, SessionEvent } from "@github/copilot-sdk";
 
 const client = new CopilotClient();
-const azureEndpoint = process.env.AZURE_OPENAI_ENDPOINT;
-const azureApiKey = process.env.AZURE_OPENAI_API_KEY;
-const azureDeployment = process.env.AZURE_OPENAI_DEPLOYMENT;
+// const azureEndpoint = process.env.AZURE_OPENAI_ENDPOINT;
+// const azureApiKey = process.env.AZURE_OPENAI_API_KEY;
+// const azureDeployment = process.env.AZURE_OPENAI_DEPLOYMENT;
 
-if (!azureEndpoint || !azureApiKey || !azureDeployment) {
-    throw new Error(
-        "Missing Azure BYOK configuration. Set AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_API_KEY, and AZURE_OPENAI_DEPLOYMENT."
-    );
-}
+// if (!azureEndpoint || !azureApiKey || !azureDeployment) {
+//     throw new Error(
+//         "Missing Azure BYOK configuration. Set AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_API_KEY, and AZURE_OPENAI_DEPLOYMENT."
+//     );
+// }
 
 const session = await client.createSession({
-    model: azureDeployment,
-    provider: {
-        type: "azure",
-        baseUrl: azureEndpoint,
-        apiKey: azureApiKey,
-        azure: {
-            apiVersion: process.env.AZURE_OPENAI_API_VERSION || "2024-10-21",
-        },
-    },
+    // model: azureDeployment,
+    // provider: {
+    //     type: "azure",
+    //     baseUrl: azureEndpoint,
+    //     apiKey: azureApiKey,
+    //     azure: {
+    //         apiVersion: process.env.AZURE_OPENAI_API_VERSION || "2024-10-21",
+    //     },
+    // },
+    // streaming: true,
+    model: "gpt-5-mini",
     streaming: true,
+    onPermissionRequest: "approveAll",
 });
 
 // Listen for response chunks
