@@ -19,6 +19,8 @@
 npm install
 ```
 
+`npm install` 會自動套用一個 `vscode-jsonrpc` 的 Node.js 22 ESM 相容修補，避免 `@github/copilot-sdk` 在啟動時因 `vscode-jsonrpc/node` 匯入失敗而中斷。
+
 ## 使用方式
 
 ```bash

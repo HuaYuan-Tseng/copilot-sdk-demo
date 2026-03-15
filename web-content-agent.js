@@ -1,4 +1,4 @@
-import { CopilotClient } from "@github/copilot-sdk";
+import { CopilotClient, approveAll } from "@github/copilot-sdk";
 import { JSDOM } from "jsdom";
 import { Readability } from "@mozilla/readability";
 
@@ -96,6 +96,7 @@ class WebContentAgent {
     const session = await this.client.createSession({
       model: "gpt-5-mini",
       streaming: false,
+      onPermissionRequest: approveAll,
     });
     this.log(`Session 創建成功，模型: claude-sonnet-4.5`);
 
